@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class MathFunctions {
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+
+        int num1 = scanner.nextInt();      
+        int num2 = scanner.nextInt();
+        char operator = scanner.next().charAt(0);
+
+        
+        String result = calculate(num1, num2, operator);
+
+        
+        System.out.println(result);
+
+        scanner.close();
+    }
+
+    public static String calculate(int num1, int num2, char operator) {
+        switch (operator) {
+            case '+':
+                return "Addition of two number is " + (double) (num1 + num2);
+            case '-':
+                return "Subtraction of two number is " + (double) (num1 - num2);
+            case '*':
+                return "Multiplication of two number is " + (double) (num1 * num2);
+            case '/':
+                if (num2 != 0) {
+                    return "Division of two number is " + ((double) num1 / num2);
+                } else {
+                    return "Error: Division by zero";
+                }
+            case '%':
+                if (num2 != 0) {
+                    return "Modulo of two number is " + (double) (num1 % num2);
+                } else {
+                    return "Error: Division by zero";
+                }
+            default:
+                return "Invalid Input";
+        }
+    }
+}
